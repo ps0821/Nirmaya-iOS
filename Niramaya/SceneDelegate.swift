@@ -20,7 +20,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
 
         // Create an instance of LoginViewController
-        let loginViewController = LoginViewController()
+        let navigationController = UINavigationController(rootViewController: LocationPromptViewController())
+        let loginViewController = navigationController
 
         // Set the LoginViewController instance as the root view controller
         window?.rootViewController = loginViewController

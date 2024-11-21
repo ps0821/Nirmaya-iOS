@@ -13,6 +13,10 @@
 		39DF78562CEDB6BE004B8244 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39DF78552CEDB6BE004B8244 /* Assets.xcassets */; };
 		39DF78592CEDB6BE004B8244 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 39DF78582CEDB6BE004B8244 /* Base */; };
 		39DF78612CEDBC0A004B8244 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DF78602CEDBC0A004B8244 /* DataModel.swift */; };
+		57D977C12CEDE4DA004B1314 /* LocationPromptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D977C02CEDE4DA004B1314 /* LocationPromptViewController.swift */; };
+		57D977C32CEDE9FC004B1314 /* MapSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D977C22CEDE9FC004B1314 /* MapSearchViewController.swift */; };
+		57D977C52CEE5DA8004B1314 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D977C42CEE5DA8004B1314 /* HomeViewController.swift */; };
+		57D977C72CEEF786004B1314 /* BannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D977C62CEEF786004B1314 /* BannerCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		39DF78582CEDB6BE004B8244 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		39DF785A2CEDB6BE004B8244 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		39DF78602CEDBC0A004B8244 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		57D977C02CEDE4DA004B1314 /* LocationPromptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPromptViewController.swift; sourceTree = "<group>"; };
+		57D977C22CEDE9FC004B1314 /* MapSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSearchViewController.swift; sourceTree = "<group>"; };
+		57D977C42CEE5DA8004B1314 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		57D977C62CEEF786004B1314 /* BannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +71,10 @@
 				39DF78552CEDB6BE004B8244 /* Assets.xcassets */,
 				39DF78572CEDB6BE004B8244 /* LaunchScreen.storyboard */,
 				39DF785A2CEDB6BE004B8244 /* Info.plist */,
+				57D977C02CEDE4DA004B1314 /* LocationPromptViewController.swift */,
+				57D977C22CEDE9FC004B1314 /* MapSearchViewController.swift */,
+				57D977C42CEE5DA8004B1314 /* HomeViewController.swift */,
+				57D977C62CEEF786004B1314 /* BannerCell.swift */,
 			);
 			path = Niramaya;
 			sourceTree = "<group>";
@@ -138,8 +150,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				39DF78512CEDB6BB004B8244 /* LoginViewController.swift in Sources */,
+				57D977C72CEEF786004B1314 /* BannerCell.swift in Sources */,
+				57D977C32CEDE9FC004B1314 /* MapSearchViewController.swift in Sources */,
 				39DF78612CEDBC0A004B8244 /* DataModel.swift in Sources */,
+				57D977C12CEDE4DA004B1314 /* LocationPromptViewController.swift in Sources */,
 				39DF784D2CEDB6BB004B8244 /* AppDelegate.swift in Sources */,
+				57D977C52CEE5DA8004B1314 /* HomeViewController.swift in Sources */,
 				39DF784F2CEDB6BB004B8244 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
