@@ -52,8 +52,31 @@ class HomeViewController: UIViewController {
         searchBar.placeholder = "Search anything"
         searchBar.searchBarStyle = .minimal
         searchBar.translatesAutoresizingMaskIntoConstraints = false
+
+        // Customize the text field inside the search bar
+        if let textField = searchBar.value(forKey: "searchField") as? UITextField {
+            // Change the placeholder text color to black
+            textField.attributedPlaceholder = NSAttributedString(
+                string: "Search anything",
+                attributes: [NSAttributedString.Key.foregroundColor: UIColor.black]
+            )
+            
+            // Change the text color of the search field itself to black
+            textField.textColor = .black
+        }
+
+        // Customize the search icon color
+        if let glassIconView = searchBar.value(forKey: "searchField") as? UITextField,
+           let iconView = glassIconView.leftView as? UIImageView {
+            iconView.image = iconView.image?.withRenderingMode(.alwaysTemplate) // Use a template for coloring
+            iconView.tintColor = .black // Set the desired color for the icon
+        }
+        
         return searchBar
     }()
+
+
+
     
     private let bannerView: UIView = {
         let view = UIView()

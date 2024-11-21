@@ -83,7 +83,77 @@ class SignupViewController: UIViewController {
         return button
     }()
     
-    // Sign-In Link
+    // Divider Line with Text
+    private let dividerLine: UIView = {
+        let line = UIView()
+        line.backgroundColor = UIColor.lightGray
+        line.translatesAutoresizingMaskIntoConstraints = false
+        return line
+    }()
+    
+    private let orLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Or"
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.textColor = UIColor.darkGray
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    private let dividerLineRight: UIView = {
+        let line = UIView()
+        line.backgroundColor = UIColor.lightGray
+        line.translatesAutoresizingMaskIntoConstraints = false
+        return line
+    }()
+    
+    // Social Buttons
+    private let googleSignInButton: UIButton = {
+        let button = UIButton(type: .system)
+        var configuration = UIButton.Configuration.filled()
+        configuration.title = "Sign in with Google"
+        configuration.image = UIImage(named: "google") // Replace with the name of your Google icon in Assets
+        configuration.imagePlacement = .leading
+        configuration.imagePadding = 8
+        configuration.baseBackgroundColor = .white
+        configuration.baseForegroundColor = .darkGray
+        configuration.cornerStyle = .medium
+        configuration.titleTextAttributesTransformer = UIConfigurationTextAttributesTransformer { incoming in
+            var outgoing = incoming
+            outgoing.font = UIFont.systemFont(ofSize: 14, weight: .medium)
+            return outgoing
+        }
+        button.configuration = configuration
+        button.layer.borderColor = UIColor.lightGray.cgColor
+        button.layer.borderWidth = 1
+        button.layer.cornerRadius = 10
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+
+    private let appleSignInButton: UIButton = {
+        let button = UIButton(type: .system)
+        var configuration = UIButton.Configuration.filled()
+        configuration.title = "Sign in with Apple"
+        configuration.image = UIImage(systemName: "applelogo")
+        configuration.imagePlacement = .leading
+        configuration.imagePadding = 8
+        configuration.baseBackgroundColor = .white
+        configuration.baseForegroundColor = .black
+        configuration.cornerStyle = .medium
+        configuration.titleTextAttributesTransformer = UIConfigurationTextAttributesTransformer { incoming in
+            var outgoing = incoming
+            outgoing.font = UIFont.systemFont(ofSize: 14, weight: .medium)
+            return outgoing
+        }
+        button.configuration = configuration
+        button.layer.borderColor = UIColor.lightGray.cgColor
+        button.layer.borderWidth = 1
+        button.layer.cornerRadius = 10
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
     private let signInLabel: UILabel = {
         let label = UILabel()
         let text = "Have an account? Sign In"
@@ -99,10 +169,8 @@ class SignupViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
-        
-        // Hide the default back button
-        navigationItem.setHidesBackButton(true, animated: false)
-        
+        navigationItem.hidesBackButton = true
+
         // Add Subviews
         view.addSubview(backgroundImageView)
         view.addSubview(backButton)
@@ -116,90 +184,98 @@ class SignupViewController: UIViewController {
         view.addSubview(termsCheckbox)
         view.addSubview(termsLabel)
         view.addSubview(signupButton)
+        view.addSubview(dividerLine)
+        view.addSubview(orLabel)
+        view.addSubview(dividerLineRight)
+        view.addSubview(googleSignInButton)
+        view.addSubview(appleSignInButton)
         view.addSubview(signInLabel)
         
         setupConstraints()
     }
     
     private func setupConstraints() {
-        // Background Image Constraints
         NSLayoutConstraint.activate([
+            // Background Image
             backgroundImageView.topAnchor.constraint(equalTo: view.topAnchor),
             backgroundImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             backgroundImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            backgroundImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
-        ])
-        
-        // Back Button Constraints
-        NSLayoutConstraint.activate([
-            backButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            backButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10)
-        ])
-        
-        // Logo Constraints
-        NSLayoutConstraint.activate([
+            backgroundImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            
+            // Back Button
+            backButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
+            backButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            
+            // Logo
             logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
-            logoImageView.widthAnchor.constraint(equalToConstant: 200),
-            logoImageView.heightAnchor.constraint(equalToConstant: 159)
-        ])
-        
-        // Name Field Constraints
-        NSLayoutConstraint.activate([
+            logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 40),
+            logoImageView.widthAnchor.constraint(equalToConstant: 180),
+            logoImageView.heightAnchor.constraint(equalToConstant: 120),
+            
+            // Name Field
             nameLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
             nameLabel.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 20),
-            
             nameField.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor),
             nameField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
             nameField.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 5),
-            nameField.heightAnchor.constraint(equalToConstant: 50)
-        ])
-        
-        // Email Field Constraints
-        NSLayoutConstraint.activate([
+            nameField.heightAnchor.constraint(equalToConstant: 50),
+            
+            // Email Field
             emailLabel.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor),
             emailLabel.topAnchor.constraint(equalTo: nameField.bottomAnchor, constant: 15),
-            
             emailField.leadingAnchor.constraint(equalTo: emailLabel.leadingAnchor),
             emailField.trailingAnchor.constraint(equalTo: nameField.trailingAnchor),
             emailField.topAnchor.constraint(equalTo: emailLabel.bottomAnchor, constant: 5),
-            emailField.heightAnchor.constraint(equalToConstant: 50)
-        ])
-        
-        // Password Field Constraints
-        NSLayoutConstraint.activate([
+            emailField.heightAnchor.constraint(equalToConstant: 50),
+            
+            // Password Field
             passwordLabel.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor),
             passwordLabel.topAnchor.constraint(equalTo: emailField.bottomAnchor, constant: 15),
-            
             passwordField.leadingAnchor.constraint(equalTo: passwordLabel.leadingAnchor),
             passwordField.trailingAnchor.constraint(equalTo: nameField.trailingAnchor),
             passwordField.topAnchor.constraint(equalTo: passwordLabel.bottomAnchor, constant: 5),
-            passwordField.heightAnchor.constraint(equalToConstant: 50)
-        ])
-        
-        // Terms Checkbox
-        NSLayoutConstraint.activate([
+            passwordField.heightAnchor.constraint(equalToConstant: 50),
+            
+            // Terms Checkbox
             termsCheckbox.leadingAnchor.constraint(equalTo: passwordField.leadingAnchor),
             termsCheckbox.topAnchor.constraint(equalTo: passwordField.bottomAnchor, constant: 15),
             termsCheckbox.widthAnchor.constraint(equalToConstant: 20),
             termsCheckbox.heightAnchor.constraint(equalToConstant: 20),
+            termsLabel.leadingAnchor.constraint(equalTo: termsCheckbox.trailingAnchor, constant: 8),
+            termsLabel.centerYAnchor.constraint(equalTo: termsCheckbox.centerYAnchor),
             
-            termsLabel.leadingAnchor.constraint(equalTo: termsCheckbox.trailingAnchor, constant: 10),
-            termsLabel.centerYAnchor.constraint(equalTo: termsCheckbox.centerYAnchor)
-        ])
-        
-        // Signup Button
-        NSLayoutConstraint.activate([
+            // Signup Button
             signupButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            signupButton.topAnchor.constraint(equalTo: termsCheckbox.bottomAnchor, constant: 20),
+            signupButton.topAnchor.constraint(equalTo: termsLabel.bottomAnchor, constant: 20),
             signupButton.widthAnchor.constraint(equalToConstant: 193),
-            signupButton.heightAnchor.constraint(equalToConstant: 47)
-        ])
-        
-        // Sign-In Label Constraints
-        NSLayoutConstraint.activate([
+            signupButton.heightAnchor.constraint(equalToConstant: 47),
+            
+            // Divider Line and Or
+            dividerLine.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
+            dividerLine.centerYAnchor.constraint(equalTo: orLabel.centerYAnchor),
+            dividerLine.trailingAnchor.constraint(equalTo: orLabel.leadingAnchor, constant: -8),
+            dividerLine.heightAnchor.constraint(equalToConstant: 1),
+            orLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            dividerLineRight.leadingAnchor.constraint(equalTo: orLabel.trailingAnchor, constant: 8),
+            dividerLineRight.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
+            dividerLineRight.heightAnchor.constraint(equalToConstant: 1),
+            dividerLineRight.centerYAnchor.constraint(equalTo: orLabel.centerYAnchor),
+            orLabel.topAnchor.constraint(equalTo: signupButton.bottomAnchor, constant: 20),
+            
+            // Social Buttons
+            googleSignInButton.trailingAnchor.constraint(equalTo: view.centerXAnchor, constant: -10),
+            googleSignInButton.topAnchor.constraint(equalTo: orLabel.bottomAnchor, constant: 20),
+            googleSignInButton.widthAnchor.constraint(equalToConstant: 170),
+            googleSignInButton.heightAnchor.constraint(equalToConstant: 44),
+            
+            appleSignInButton.leadingAnchor.constraint(equalTo: view.centerXAnchor, constant: 10),
+            appleSignInButton.topAnchor.constraint(equalTo: googleSignInButton.topAnchor),
+            appleSignInButton.widthAnchor.constraint(equalToConstant: 170),
+            appleSignInButton.heightAnchor.constraint(equalToConstant: 44),
+            
+            // Sign-In Label
             signInLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            signInLabel.topAnchor.constraint(equalTo: signupButton.bottomAnchor, constant: 40)
+            signInLabel.topAnchor.constraint(equalTo: googleSignInButton.bottomAnchor, constant: 40)
         ])
     }
     
@@ -209,7 +285,6 @@ class SignupViewController: UIViewController {
     
     @objc private func navigateToLocationPrompt() {
         let locationPromptVC = UINavigationController(rootViewController: LocationPromptViewController())
-        
         if let window = UIApplication.shared.connectedScenes.first as? UIWindowScene,
            let keyWindow = window.windows.first {
             keyWindow.rootViewController = locationPromptVC
@@ -225,7 +300,6 @@ class SignupViewController: UIViewController {
         }
     }
     
-    // Helper to Create Labels
     private static func createFieldLabel(text: String) -> UILabel {
         let label = UILabel()
         label.text = text
@@ -235,7 +309,6 @@ class SignupViewController: UIViewController {
         return label
     }
     
-    // Helper to Create Text Fields
     private static func createTextField(placeholder: String) -> UITextField {
         let textField = UITextField()
         textField.placeholder = placeholder

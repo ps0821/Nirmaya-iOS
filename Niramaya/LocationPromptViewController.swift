@@ -47,6 +47,7 @@ class LocationPromptViewController: UIViewController {
         titleLabel.text = "Where are you?"
         titleLabel.font = UIFont.boldSystemFont(ofSize: 24)
         titleLabel.textAlignment = .center
+        titleLabel.textColor = .black
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         cardView.addSubview(titleLabel)
         
@@ -56,7 +57,7 @@ class LocationPromptViewController: UIViewController {
         descriptionLabel.font = UIFont.systemFont(ofSize: 14)
         descriptionLabel.textAlignment = .center
         descriptionLabel.numberOfLines = 0
-        descriptionLabel.textColor = .secondaryLabel
+        descriptionLabel.textColor = .black
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
         cardView.addSubview(descriptionLabel)
         
@@ -73,7 +74,7 @@ class LocationPromptViewController: UIViewController {
         // Manual location button
         let manualButton = UIButton(type: .system)
         manualButton.setTitle("Select location manually", for: .normal)
-        manualButton.setTitleColor(.secondaryLabel, for: .normal)
+        manualButton.setTitleColor(UIColor(hex: "#000000"), for: .normal)
         manualButton.translatesAutoresizingMaskIntoConstraints = false
         manualButton.addTarget(self, action: #selector(manualButtonTapped), for: .touchUpInside)
         cardView.addSubview(manualButton)

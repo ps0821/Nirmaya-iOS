@@ -71,7 +71,7 @@ class MapSearchViewController: UIViewController, CLLocationManagerDelegate, MKMa
         let subAddressLabel = UILabel()
         subAddressLabel.text = "Blah blah blah blah blah blah blah blah blah blah blah blah blah blah bl"
         subAddressLabel.font = UIFont.systemFont(ofSize: 14, weight: .light)
-        subAddressLabel.textColor = .secondaryLabel
+        subAddressLabel.textColor = UIColor(hex: "#000000")
         subAddressLabel.textAlignment = .center
         subAddressLabel.numberOfLines = 0
         subAddressLabel.translatesAutoresizingMaskIntoConstraints = false
