@@ -2,8 +2,9 @@
 //  LoginViewController.swift
 //  Niramaya
 //
-//  Created by palak seth on 20/11/24.
+//  Created by Yash's Mackbook on 10/12/24.
 //
+
 
 import UIKit
 
@@ -277,3 +278,6 @@ extension UIColor {
     }
 }
 
+#Preview{
+    LoginViewController()
+}

@@ -138,6 +138,10 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         let servicesVC = ServicesViewController()
         navigationController?.pushViewController(servicesVC, animated: true)
     }
+    @objc private func openCategoriesScreen() {
+        let categoriesVC = CategoriesViewController()
+        navigationController?.pushViewController(categoriesVC, animated: true)
+    }
     private var categoriesCollectionView: UICollectionView!
     private var servicesCollectionView: UICollectionView!
     
@@ -159,7 +163,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         // Configure collection view layouts
         let categoriesLayout = UICollectionViewFlowLayout()
         categoriesLayout.scrollDirection = .horizontal
-        categoriesLayout.minimumLineSpacing = 10
+        categoriesLayout.minimumLineSpacing = 15
         categoriesLayout.itemSize = CGSize(width: 80, height: 100)
         
         categoriesCollectionView = UICollectionView(frame: .zero, collectionViewLayout: categoriesLayout)
@@ -195,6 +199,8 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         view.addSubview(servicesLabel)
         view.addSubview(seeAllServicesButton)
         view.addSubview(servicesCollectionView)
+        seeAllCategoriesButton.addTarget(self, action: #selector(openCategoriesScreen), for: .touchUpInside)
+
         seeAllServicesButton.addTarget(self, action: #selector(openServices), for: .touchUpInside)
     }
     
@@ -301,7 +307,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         private let label: UILabel = {
             let label = UILabel()
             label.textAlignment = .center
-            label.font = UIFont.systemFont(ofSize: 12, weight: .medium)
+            label.font = UIFont.systemFont(ofSize: 11, weight: .medium)
             label.translatesAutoresizingMaskIntoConstraints = false
             return label
         }()
@@ -310,16 +316,16 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             super.init(frame: frame)
             contentView.addSubview(imageView)
             contentView.addSubview(label)
-            contentView.backgroundColor = UIColor(hex: "EAECE2")
+            
             contentView.layer.cornerRadius = 10
             
             NSLayoutConstraint.activate([
                 imageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
                 imageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-                imageView.widthAnchor.constraint(equalToConstant: 40),
-                imageView.heightAnchor.constraint(equalToConstant: 40),
+                imageView.widthAnchor.constraint(equalToConstant: 65),
+                imageView.heightAnchor.constraint(equalToConstant: 65),
                 
-                label.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 4),
+                label.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 8),
                 label.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
                 label.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
             ])
