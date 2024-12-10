@@ -12,6 +12,15 @@
 		39DF78562CEDB6BE004B8244 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39DF78552CEDB6BE004B8244 /* Assets.xcassets */; };
 		39DF78592CEDB6BE004B8244 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 39DF78582CEDB6BE004B8244 /* Base */; };
 		39DF78612CEDBC0A004B8244 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DF78602CEDBC0A004B8244 /* DataModel.swift */; };
+		577D19B52D045F82006BBB80 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577D19B42D045F82006BBB80 /* OnboardingViewController.swift */; };
+		577D19B72D046039006BBB80 /* WelcomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577D19B62D046039006BBB80 /* WelcomePageViewController.swift */; };
+		577D19B92D04604A006BBB80 /* OptionsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577D19B82D04604A006BBB80 /* OptionsPageViewController.swift */; };
+		577D19BB2D04605D006BBB80 /* WellbeingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577D19BA2D04605D006BBB80 /* WellbeingPageViewController.swift */; };
+		577D19BD2D046074006BBB80 /* Page4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577D19BC2D046074006BBB80 /* Page4ViewController.swift */; };
+		577D19BF2D06BA60006BBB80 /* GetStartedPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577D19BE2D06BA60006BBB80 /* GetStartedPageViewController.swift */; };
+		577D19C12D07202C006BBB80 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577D19C02D07202C006BBB80 /* File.swift */; };
+		577D19C32D0728FB006BBB80 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577D19C22D0728FB006BBB80 /* TabBarController.swift */; };
+		577D19C72D074F25006BBB80 /* ServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577D19C62D074F25006BBB80 /* ServicesViewController.swift */; };
 		57D977C12CEDE4DA004B1314 /* LocationPromptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D977C02CEDE4DA004B1314 /* LocationPromptViewController.swift */; };
 		57D977C32CEDE9FC004B1314 /* MapSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D977C22CEDE9FC004B1314 /* MapSearchViewController.swift */; };
 		57D977C52CEE5DA8004B1314 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D977C42CEE5DA8004B1314 /* HomeViewController.swift */; };
@@ -28,6 +37,15 @@
 		39DF78582CEDB6BE004B8244 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		39DF785A2CEDB6BE004B8244 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		39DF78602CEDBC0A004B8244 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		577D19B42D045F82006BBB80 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		577D19B62D046039006BBB80 /* WelcomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePageViewController.swift; sourceTree = "<group>"; };
+		577D19B82D04604A006BBB80 /* OptionsPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsPageViewController.swift; sourceTree = "<group>"; };
+		577D19BA2D04605D006BBB80 /* WellbeingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WellbeingPageViewController.swift; sourceTree = "<group>"; };
+		577D19BC2D046074006BBB80 /* Page4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page4ViewController.swift; sourceTree = "<group>"; };
+		577D19BE2D06BA60006BBB80 /* GetStartedPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedPageViewController.swift; sourceTree = "<group>"; };
+		577D19C02D07202C006BBB80 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		577D19C22D0728FB006BBB80 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		577D19C62D074F25006BBB80 /* ServicesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesViewController.swift; sourceTree = "<group>"; };
 		57D977C02CEDE4DA004B1314 /* LocationPromptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPromptViewController.swift; sourceTree = "<group>"; };
 		57D977C22CEDE9FC004B1314 /* MapSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSearchViewController.swift; sourceTree = "<group>"; };
 		57D977C42CEE5DA8004B1314 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +84,8 @@
 		39DF784B2CEDB6BB004B8244 /* Niramaya */ = {
 			isa = PBXGroup;
 			children = (
+				577D19C52D074F0C006BBB80 /* Services */,
+				577D19B32D045F55006BBB80 /* OnBoarding */,
 				39DF784C2CEDB6BB004B8244 /* AppDelegate.swift */,
 				39DF784E2CEDB6BB004B8244 /* SceneDelegate.swift */,
 				39DF78602CEDBC0A004B8244 /* DataModel.swift */,
@@ -75,11 +95,34 @@
 				57D977C02CEDE4DA004B1314 /* LocationPromptViewController.swift */,
 				57D977C22CEDE9FC004B1314 /* MapSearchViewController.swift */,
 				57D977C42CEE5DA8004B1314 /* HomeViewController.swift */,
+				577D19C02D07202C006BBB80 /* File.swift */,
 				57D977C62CEEF786004B1314 /* BannerCell.swift */,
 				57D977CA2CEF19FD004B1314 /* SignupViewController.swift */,
 				57D977CC2CEF1A1B004B1314 /* LoginViewController.swift */,
+				577D19C22D0728FB006BBB80 /* TabBarController.swift */,
 			);
 			path = Niramaya;
+			sourceTree = "<group>";
+		};
+		577D19B32D045F55006BBB80 /* OnBoarding */ = {
+			isa = PBXGroup;
+			children = (
+				577D19B42D045F82006BBB80 /* OnboardingViewController.swift */,
+				577D19B82D04604A006BBB80 /* OptionsPageViewController.swift */,
+				577D19BA2D04605D006BBB80 /* WellbeingPageViewController.swift */,
+				577D19BC2D046074006BBB80 /* Page4ViewController.swift */,
+				577D19B62D046039006BBB80 /* WelcomePageViewController.swift */,
+				577D19BE2D06BA60006BBB80 /* GetStartedPageViewController.swift */,
+			);
+			path = OnBoarding;
+			sourceTree = "<group>";
+		};
+		577D19C52D074F0C006BBB80 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				577D19C62D074F25006BBB80 /* ServicesViewController.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,9 +200,18 @@
 				57D977C72CEEF786004B1314 /* BannerCell.swift in Sources */,
 				57D977C32CEDE9FC004B1314 /* MapSearchViewController.swift in Sources */,
 				39DF78612CEDBC0A004B8244 /* DataModel.swift in Sources */,
+				577D19C12D07202C006BBB80 /* File.swift in Sources */,
+				577D19C72D074F25006BBB80 /* ServicesViewController.swift in Sources */,
+				577D19C32D0728FB006BBB80 /* TabBarController.swift in Sources */,
 				57D977C12CEDE4DA004B1314 /* LocationPromptViewController.swift in Sources */,
 				39DF784D2CEDB6BB004B8244 /* AppDelegate.swift in Sources */,
+				577D19B52D045F82006BBB80 /* OnboardingViewController.swift in Sources */,
+				577D19BF2D06BA60006BBB80 /* GetStartedPageViewController.swift in Sources */,
+				577D19BD2D046074006BBB80 /* Page4ViewController.swift in Sources */,
 				57D977C52CEE5DA8004B1314 /* HomeViewController.swift in Sources */,
+				577D19BB2D04605D006BBB80 /* WellbeingPageViewController.swift in Sources */,
+				577D19B72D046039006BBB80 /* WelcomePageViewController.swift in Sources */,
+				577D19B92D04604A006BBB80 /* OptionsPageViewController.swift in Sources */,
 				39DF784F2CEDB6BB004B8244 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
