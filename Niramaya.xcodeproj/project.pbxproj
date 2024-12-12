@@ -12,17 +12,23 @@
 		39DF78562CEDB6BE004B8244 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39DF78552CEDB6BE004B8244 /* Assets.xcassets */; };
 		39DF78592CEDB6BE004B8244 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 39DF78582CEDB6BE004B8244 /* Base */; };
 		39DF78612CEDBC0A004B8244 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DF78602CEDBC0A004B8244 /* DataModel.swift */; };
-		577D19B52D045F82006BBB80 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577D19B42D045F82006BBB80 /* OnboardingViewController.swift */; };
-		577D19B72D046039006BBB80 /* WelcomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577D19B62D046039006BBB80 /* WelcomePageViewController.swift */; };
-		577D19B92D04604A006BBB80 /* OptionsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577D19B82D04604A006BBB80 /* OptionsPageViewController.swift */; };
-		577D19BB2D04605D006BBB80 /* WellbeingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577D19BA2D04605D006BBB80 /* WellbeingPageViewController.swift */; };
-		577D19BD2D046074006BBB80 /* Page4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577D19BC2D046074006BBB80 /* Page4ViewController.swift */; };
-		577D19BF2D06BA60006BBB80 /* GetStartedPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577D19BE2D06BA60006BBB80 /* GetStartedPageViewController.swift */; };
 		577D19C12D07202C006BBB80 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577D19C02D07202C006BBB80 /* File.swift */; };
 		577D19C72D074F25006BBB80 /* ServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577D19C62D074F25006BBB80 /* ServicesViewController.swift */; };
 		577D19CA2D081ECF006BBB80 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577D19C92D081ECF006BBB80 /* CategoriesViewController.swift */; };
 		577D19D02D083C98006BBB80 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577D19CF2D083C98006BBB80 /* TabBarController.swift */; };
 		577D19D32D083D25006BBB80 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577D19D22D083D25006BBB80 /* LoginViewController.swift */; };
+		577D19D52D0847C3006BBB80 /* MapWithDoctorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577D19D42D0847C3006BBB80 /* MapWithDoctorsViewController.swift */; };
+		577D19D72D0847E9006BBB80 /* DoctorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577D19D62D0847E9006BBB80 /* DoctorTableViewCell.swift */; };
+		577D19D92D08C051006BBB80 /* WelcomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577D19D82D08C051006BBB80 /* WelcomePageViewController.swift */; };
+		577D19DB2D08C067006BBB80 /* SelectionPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577D19DA2D08C067006BBB80 /* SelectionPageViewController.swift */; };
+		577D19DD2D08C077006BBB80 /* WellbeingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577D19DC2D08C077006BBB80 /* WellbeingPageViewController.swift */; };
+		577D19E22D08C448006BBB80 /* FinalPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577D19E12D08C448006BBB80 /* FinalPageViewController.swift */; };
+		577D19E42D08C547006BBB80 /* OnboardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577D19E32D08C547006BBB80 /* OnboardingContainerViewController.swift */; };
+		577D19E82D08E47E006BBB80 /* NearbyHospitalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577D19E72D08E47E006BBB80 /* NearbyHospitalsViewController.swift */; };
+		577D19EA2D09F42F006BBB80 /* DoctorBookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577D19E92D09F42F006BBB80 /* DoctorBookingViewController.swift */; };
+		577D19EC2D09F618006BBB80 /* DoctorProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577D19EB2D09F618006BBB80 /* DoctorProfileViewController.swift */; };
+		577D19EE2D09F6C3006BBB80 /* AppointmentBookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577D19ED2D09F6C3006BBB80 /* AppointmentBookingViewController.swift */; };
+		577D19F02D0A1103006BBB80 /* LoginAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577D19EF2D0A1103006BBB80 /* LoginAuth.swift */; };
 		57D977C12CEDE4DA004B1314 /* LocationPromptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D977C02CEDE4DA004B1314 /* LocationPromptViewController.swift */; };
 		57D977C32CEDE9FC004B1314 /* MapSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D977C22CEDE9FC004B1314 /* MapSearchViewController.swift */; };
 		57D977C52CEE5DA8004B1314 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D977C42CEE5DA8004B1314 /* HomeViewController.swift */; };
@@ -38,17 +44,23 @@
 		39DF78582CEDB6BE004B8244 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		39DF785A2CEDB6BE004B8244 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		39DF78602CEDBC0A004B8244 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
-		577D19B42D045F82006BBB80 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
-		577D19B62D046039006BBB80 /* WelcomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePageViewController.swift; sourceTree = "<group>"; };
-		577D19B82D04604A006BBB80 /* OptionsPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsPageViewController.swift; sourceTree = "<group>"; };
-		577D19BA2D04605D006BBB80 /* WellbeingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WellbeingPageViewController.swift; sourceTree = "<group>"; };
-		577D19BC2D046074006BBB80 /* Page4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page4ViewController.swift; sourceTree = "<group>"; };
-		577D19BE2D06BA60006BBB80 /* GetStartedPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedPageViewController.swift; sourceTree = "<group>"; };
 		577D19C02D07202C006BBB80 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		577D19C62D074F25006BBB80 /* ServicesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesViewController.swift; sourceTree = "<group>"; };
 		577D19C92D081ECF006BBB80 /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
 		577D19CF2D083C98006BBB80 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		577D19D22D083D25006BBB80 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		577D19D42D0847C3006BBB80 /* MapWithDoctorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapWithDoctorsViewController.swift; sourceTree = "<group>"; };
+		577D19D62D0847E9006BBB80 /* DoctorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorTableViewCell.swift; sourceTree = "<group>"; };
+		577D19D82D08C051006BBB80 /* WelcomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePageViewController.swift; sourceTree = "<group>"; };
+		577D19DA2D08C067006BBB80 /* SelectionPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionPageViewController.swift; sourceTree = "<group>"; };
+		577D19DC2D08C077006BBB80 /* WellbeingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WellbeingPageViewController.swift; sourceTree = "<group>"; };
+		577D19E12D08C448006BBB80 /* FinalPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalPageViewController.swift; sourceTree = "<group>"; };
+		577D19E32D08C547006BBB80 /* OnboardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewController.swift; sourceTree = "<group>"; };
+		577D19E72D08E47E006BBB80 /* NearbyHospitalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyHospitalsViewController.swift; sourceTree = "<group>"; };
+		577D19E92D09F42F006BBB80 /* DoctorBookingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorBookingViewController.swift; sourceTree = "<group>"; };
+		577D19EB2D09F618006BBB80 /* DoctorProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorProfileViewController.swift; sourceTree = "<group>"; };
+		577D19ED2D09F6C3006BBB80 /* AppointmentBookingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentBookingViewController.swift; sourceTree = "<group>"; };
+		577D19EF2D0A1103006BBB80 /* LoginAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAuth.swift; sourceTree = "<group>"; };
 		57D977C02CEDE4DA004B1314 /* LocationPromptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPromptViewController.swift; sourceTree = "<group>"; };
 		57D977C22CEDE9FC004B1314 /* MapSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSearchViewController.swift; sourceTree = "<group>"; };
 		57D977C42CEE5DA8004B1314 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -112,12 +124,11 @@
 		577D19B32D045F55006BBB80 /* OnBoarding */ = {
 			isa = PBXGroup;
 			children = (
-				577D19B42D045F82006BBB80 /* OnboardingViewController.swift */,
-				577D19B82D04604A006BBB80 /* OptionsPageViewController.swift */,
-				577D19BA2D04605D006BBB80 /* WellbeingPageViewController.swift */,
-				577D19BC2D046074006BBB80 /* Page4ViewController.swift */,
-				577D19B62D046039006BBB80 /* WelcomePageViewController.swift */,
-				577D19BE2D06BA60006BBB80 /* GetStartedPageViewController.swift */,
+				577D19D82D08C051006BBB80 /* WelcomePageViewController.swift */,
+				577D19DA2D08C067006BBB80 /* SelectionPageViewController.swift */,
+				577D19DC2D08C077006BBB80 /* WellbeingPageViewController.swift */,
+				577D19E12D08C448006BBB80 /* FinalPageViewController.swift */,
+				577D19E32D08C547006BBB80 /* OnboardingContainerViewController.swift */,
 			);
 			path = OnBoarding;
 			sourceTree = "<group>";
@@ -141,6 +152,9 @@
 		577D19CB2D083AAD006BBB80 /* Map Feature */ = {
 			isa = PBXGroup;
 			children = (
+				577D19D42D0847C3006BBB80 /* MapWithDoctorsViewController.swift */,
+				577D19D62D0847E9006BBB80 /* DoctorTableViewCell.swift */,
+				577D19E72D08E47E006BBB80 /* NearbyHospitalsViewController.swift */,
 			);
 			path = "Map Feature";
 			sourceTree = "<group>";
@@ -148,6 +162,9 @@
 		577D19CC2D083ABD006BBB80 /* BookingFeature */ = {
 			isa = PBXGroup;
 			children = (
+				577D19E92D09F42F006BBB80 /* DoctorBookingViewController.swift */,
+				577D19EB2D09F618006BBB80 /* DoctorProfileViewController.swift */,
+				577D19ED2D09F6C3006BBB80 /* AppointmentBookingViewController.swift */,
 			);
 			path = BookingFeature;
 			sourceTree = "<group>";
@@ -164,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				577D19D22D083D25006BBB80 /* LoginViewController.swift */,
+				577D19EF2D0A1103006BBB80 /* LoginAuth.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -238,24 +256,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				577D19EE2D09F6C3006BBB80 /* AppointmentBookingViewController.swift in Sources */,
 				577D19CA2D081ECF006BBB80 /* CategoriesViewController.swift in Sources */,
+				577D19E82D08E47E006BBB80 /* NearbyHospitalsViewController.swift in Sources */,
+				577D19EC2D09F618006BBB80 /* DoctorProfileViewController.swift in Sources */,
 				57D977CB2CEF19FD004B1314 /* SignupViewController.swift in Sources */,
+				577D19DB2D08C067006BBB80 /* SelectionPageViewController.swift in Sources */,
+				577D19E42D08C547006BBB80 /* OnboardingContainerViewController.swift in Sources */,
+				577D19DD2D08C077006BBB80 /* WellbeingPageViewController.swift in Sources */,
+				577D19D92D08C051006BBB80 /* WelcomePageViewController.swift in Sources */,
 				57D977C72CEEF786004B1314 /* BannerCell.swift in Sources */,
+				577D19E22D08C448006BBB80 /* FinalPageViewController.swift in Sources */,
+				577D19F02D0A1103006BBB80 /* LoginAuth.swift in Sources */,
+				577D19D52D0847C3006BBB80 /* MapWithDoctorsViewController.swift in Sources */,
 				57D977C32CEDE9FC004B1314 /* MapSearchViewController.swift in Sources */,
+				577D19EA2D09F42F006BBB80 /* DoctorBookingViewController.swift in Sources */,
 				39DF78612CEDBC0A004B8244 /* DataModel.swift in Sources */,
 				577D19C12D07202C006BBB80 /* File.swift in Sources */,
 				577D19C72D074F25006BBB80 /* ServicesViewController.swift in Sources */,
 				577D19D32D083D25006BBB80 /* LoginViewController.swift in Sources */,
 				57D977C12CEDE4DA004B1314 /* LocationPromptViewController.swift in Sources */,
 				39DF784D2CEDB6BB004B8244 /* AppDelegate.swift in Sources */,
-				577D19B52D045F82006BBB80 /* OnboardingViewController.swift in Sources */,
-				577D19BF2D06BA60006BBB80 /* GetStartedPageViewController.swift in Sources */,
 				577D19D02D083C98006BBB80 /* TabBarController.swift in Sources */,
-				577D19BD2D046074006BBB80 /* Page4ViewController.swift in Sources */,
+				577D19D72D0847E9006BBB80 /* DoctorTableViewCell.swift in Sources */,
 				57D977C52CEE5DA8004B1314 /* HomeViewController.swift in Sources */,
-				577D19BB2D04605D006BBB80 /* WellbeingPageViewController.swift in Sources */,
-				577D19B72D046039006BBB80 /* WelcomePageViewController.swift in Sources */,
-				577D19B92D04604A006BBB80 /* OptionsPageViewController.swift in Sources */,
 				39DF784F2CEDB6BB004B8244 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

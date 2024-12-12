@@ -22,12 +22,12 @@ class TabBarController: UITabBarController {
         homeNavController.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "house"), selectedImage: UIImage(systemName: "house.fill"))
         
         // Bookings Tab
-        let bookingsVC = UIViewController() // Replace with your BookingsViewController
+        let bookingsVC = DoctorBookingViewController() // Replace with your BookingsViewController
         bookingsVC.view.backgroundColor = .white
         bookingsVC.tabBarItem = UITabBarItem(title: "Bookings", image: UIImage(systemName: "doc.text"), selectedImage: UIImage(systemName: "doc.text.fill"))
         
         // Maps Tab
-        let mapsVC = UIViewController() // Replace with your MapsViewController
+        let mapsVC = UINavigationController(rootViewController: LocationPromptViewController())  // Replace with your MapsViewController
         mapsVC.view.backgroundColor = .white
         mapsVC.tabBarItem = UITabBarItem(title: "Maps", image: UIImage(systemName: "map"), selectedImage: UIImage(systemName: "map.fill"))
         

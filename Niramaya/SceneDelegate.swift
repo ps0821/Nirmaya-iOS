@@ -27,27 +27,27 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        window?.rootViewController = loginViewController
 //        window?.makeKeyAndVisible()
 //    }
-    func scene(
-            _ scene: UIScene,
-            willConnectTo session: UISceneSession,
-            options connectionOptions: UIScene.ConnectionOptions
-        ) {
-            guard let windowScene = (scene as? UIWindowScene) else { return }
-
-            let window = UIWindow(windowScene: windowScene)
-            let tabBarController = TabBarController()
-            window.rootViewController = tabBarController
-            self.window = window
-            window.makeKeyAndVisible()
-        }
-//    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-//        guard let windowScene = (scene as? UIWindowScene) else { return }
-//        let window = UIWindow(windowScene: windowScene)
-//        let onboardingVC = OnboardingViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
-//        window.rootViewController = onboardingVC
-//        self.window = window
-//        window.makeKeyAndVisible()
-//    }
+//    func scene(
+//            _ scene: UIScene,
+//            willConnectTo session: UISceneSession,
+//            options connectionOptions: UIScene.ConnectionOptions
+//        ) {
+//            guard let windowScene = (scene as? UIWindowScene) else { return }
+//
+//            let window = UIWindow(windowScene: windowScene)
+//            let tabBarController = TabBarController()
+//            window.rootViewController = tabBarController
+//            self.window = window
+//            window.makeKeyAndVisible()
+//        }
+    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        let window = UIWindow(windowScene: windowScene)
+        let navigationController = UINavigationController(rootViewController: OnboardingContainerViewController())
+        window.rootViewController = navigationController
+        self.window = window
+        window.makeKeyAndVisible()
+    }
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.

@@ -1,61 +1,66 @@
-//
-//  Page3ViewController.swift
-//  Niramaya
-//
-//  Created by Yash's Mackbook on 07/12/24.
-//
-
 import UIKit
 
 class WellbeingPageViewController: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = UIColor(red: 245/255, green: 245/255, blue: 250/255, alpha: 1)
 
-        let backgroundBox = UIView()
-        backgroundBox.backgroundColor = .white
-        backgroundBox.layer.cornerRadius = 20
-        backgroundBox.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(backgroundBox)
-
-        let titleLabel = UILabel()
-        titleLabel.text = "Unlock effortless wellbeing"
-        titleLabel.font = UIFont.boldSystemFont(ofSize: 20)
-        titleLabel.textAlignment = .center
-
-        let subtitleLabel = UILabel()
-        subtitleLabel.text = "Experience expert care, hassle-free logistics, and a healthier future."
-        subtitleLabel.font = UIFont.systemFont(ofSize: 16)
-        subtitleLabel.textAlignment = .center
-        subtitleLabel.numberOfLines = 0
-
-        let imageView = UIImageView(image: UIImage(named: "wellbeing"))
+    private let illustrationImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "wellbeingImage") // Replace with your image name
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
 
-        [imageView, titleLabel, subtitleLabel].forEach {
-            $0.translatesAutoresizingMaskIntoConstraints = false
-            backgroundBox.addSubview($0)
-        }
+    private let titleLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Unlock effortless wellbeing"
+        label.font = UIFont.systemFont(ofSize: 38)
+        label.textAlignment = .center
+        label.numberOfLines = 0
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+
+    private let descriptionLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Experience expert care, hassle-free logistics, and a healthier future."
+        label.font = UIFont.systemFont(ofSize: 20)
+        label.textAlignment = .center
+        label.textColor = UIColor.darkGray
+        label.numberOfLines = 0
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupUI()
+    }
+
+    private func setupUI() {
+        view.backgroundColor = .clear
+
+        view.addSubview(illustrationImageView)
+        view.addSubview(titleLabel)
+        view.addSubview(descriptionLabel)
 
         NSLayoutConstraint.activate([
-            backgroundBox.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            backgroundBox.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            backgroundBox.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -50),
-            backgroundBox.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.6),
+            illustrationImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
+            illustrationImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
+            illustrationImageView.widthAnchor.constraint(equalToConstant: 230),
+            illustrationImageView.heightAnchor.constraint(equalToConstant: 230),
 
-            imageView.topAnchor.constraint(equalTo: backgroundBox.topAnchor, constant: 30),
-            imageView.centerXAnchor.constraint(equalTo: backgroundBox.centerXAnchor),
-            imageView.widthAnchor.constraint(equalToConstant: 150),
-            imageView.heightAnchor.constraint(equalToConstant: 150),
+            titleLabel.topAnchor.constraint(equalTo: illustrationImageView.bottomAnchor, constant: 20),
+            titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
 
-            titleLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 20),
-            titleLabel.leadingAnchor.constraint(equalTo: backgroundBox.leadingAnchor, constant: 20),
-            titleLabel.trailingAnchor.constraint(equalTo: backgroundBox.trailingAnchor, constant: -20),
-
-            subtitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 15),
-            subtitleLabel.leadingAnchor.constraint(equalTo: backgroundBox.leadingAnchor, constant: 20),
-            subtitleLabel.trailingAnchor.constraint(equalTo: backgroundBox.trailingAnchor, constant: -20)
+            descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10),
+            descriptionLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            descriptionLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
         ])
     }
+}
+
+#Preview{
+    OnboardingContainerViewController()
 }

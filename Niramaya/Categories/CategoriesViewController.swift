@@ -130,3 +130,6 @@ class CategoryCell: UICollectionViewCell {
         imageView.image = UIImage(named: imageName)
     }
 }
+#Preview{
+    CategoriesViewController()
+}

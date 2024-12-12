@@ -111,7 +111,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         let button = UIButton(type: .system)
         button.setTitle("See All >", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .regular)
-        button.setTitleColor(UIColor.systemGreen, for: .normal)
+        button.setTitleColor(UIColor.gray, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -478,5 +478,5 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
 }
 #Preview{
-    HomeViewController()
+    TabBarController()
 }

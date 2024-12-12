@@ -13,10 +13,15 @@ class MapSearchViewController: UIViewController, CLLocationManagerDelegate, MKMa
     private let locationManager = CLLocationManager() // For managing location updates
     private let mapView = MKMapView() // Map view to display user's location
     
+    // Address labels
+    private let addressLabel = UILabel()
+    private let subAddressLabel = UILabel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         setupLocationManager()
+        
     }
     
     private func setupUI() {
@@ -25,7 +30,7 @@ class MapSearchViewController: UIViewController, CLLocationManagerDelegate, MKMa
         // Map View
         mapView.delegate = self
         mapView.translatesAutoresizingMaskIntoConstraints = false
-        mapView.showsUserLocation = true // Show user's current location on the map
+        mapView.showsUserLocation = true
         view.addSubview(mapView)
         
         // Bottom card container
@@ -47,7 +52,7 @@ class MapSearchViewController: UIViewController, CLLocationManagerDelegate, MKMa
         bottomCard.addSubview(optionsContainer)
         
         // Add Buttons
-        let firstRowOptions = ["Nearby Clinics", "Nearby Homestays"]
+        let firstRowOptions = ["Nearby Doctors", "Nearby Homestays"]
         let secondRowOptions = ["Cabs", "Nearby Hospitals"]
         
         // First Row
@@ -59,7 +64,6 @@ class MapSearchViewController: UIViewController, CLLocationManagerDelegate, MKMa
         optionsContainer.addArrangedSubview(secondRowStack)
         
         // Address Labels
-        let addressLabel = UILabel()
         addressLabel.text = "House, Street, City, State"
         addressLabel.font = UIFont.boldSystemFont(ofSize: 28)
         addressLabel.textAlignment = .center
@@ -68,10 +72,9 @@ class MapSearchViewController: UIViewController, CLLocationManagerDelegate, MKMa
         addressLabel.translatesAutoresizingMaskIntoConstraints = false
         bottomCard.addSubview(addressLabel)
         
-        let subAddressLabel = UILabel()
         subAddressLabel.text = "Blah blah blah blah blah blah blah blah blah blah blah blah blah blah bl"
         subAddressLabel.font = UIFont.systemFont(ofSize: 14, weight: .light)
-        subAddressLabel.textColor = UIColor(hex: "#000000")
+        subAddressLabel.textColor = UIColor.black
         subAddressLabel.textAlignment = .center
         subAddressLabel.numberOfLines = 0
         subAddressLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -81,7 +84,7 @@ class MapSearchViewController: UIViewController, CLLocationManagerDelegate, MKMa
         let confirmButton = UIButton(type: .system)
         confirmButton.setTitle("Tap to Confirm", for: .normal)
         confirmButton.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .bold)
-        confirmButton.backgroundColor = UIColor(hex: "#679400")
+        confirmButton.backgroundColor = UIColor(red: 103 / 255, green: 148 / 255, blue: 0 / 255, alpha: 1.0)
         confirmButton.setTitleColor(.white, for: .normal)
         confirmButton.layer.cornerRadius = 24
         confirmButton.translatesAutoresizingMaskIntoConstraints = false
@@ -127,8 +130,8 @@ class MapSearchViewController: UIViewController, CLLocationManagerDelegate, MKMa
     private func setupLocationManager() {
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.requestWhenInUseAuthorization() // Request location permission
-        locationManager.startUpdatingLocation() // Start updating location
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
     }
     
     private func createAdaptiveButtonRow(with options: [String]) -> UIStackView {
@@ -148,18 +151,48 @@ class MapSearchViewController: UIViewController, CLLocationManagerDelegate, MKMa
             button.backgroundColor = .clear
             button.layer.borderColor = UIColor.black.cgColor
             button.layer.borderWidth = 1
-            button.contentEdgeInsets = UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16) // Padding for adaptive sizing
+            button.contentEdgeInsets = UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)
+            
+            // Add target action for buttons
+            switch option {
+            case "Nearby Doctors":
+                button.addTarget(self, action: #selector(DoctorButton), for: .touchUpInside)
+            case "Nearby Hospitals" :
+                button.addTarget(self, action: #selector(DoctorButton), for: .touchUpInside)
+            default:
+                break
+            }
+            
             rowStack.addArrangedSubview(button)
         }
         return rowStack
     }
     
-    // CLLocationManagerDelegate
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.last {
             let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
             let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
             mapView.setRegion(region, animated: true)
+            
+            // Reverse Geocoding
+            let geocoder = CLGeocoder()
+            geocoder.reverseGeocodeLocation(location) { [weak self] placemarks, error in
+                guard let self = self else { return }
+                if let error = error {
+                    print("Failed to get address: \(error.localizedDescription)")
+                    return
+                }
+                
+                if let placemark = placemarks?.first {
+                    let address = "\(placemark.name ?? ""), \(placemark.locality ?? "")"
+                    let subAddress = "\(placemark.administrativeArea ?? ""), \(placemark.country ?? "")"
+                    
+                    DispatchQueue.main.async {
+                        self.addressLabel.text = address
+                        self.subAddressLabel.text = subAddress
+                    }
+                }
+            }
         }
     }
     
@@ -169,9 +202,22 @@ class MapSearchViewController: UIViewController, CLLocationManagerDelegate, MKMa
     
     @objc private func confirmButtonTapped() {
         print("Confirm button tapped")
-        let HomeVC = HomeViewController()
-        navigationController?.pushViewController(HomeVC, animated: true)
+        // Add functionality for confirm button
+    }
+    
+    @objc private func DoctorButton() {
+        print("Nearby Doctors button tapped")
+        let doctorVC = MapWithDoctorsViewController() // Replace with your actual ViewController
+        navigationController?.pushViewController(doctorVC, animated: true)
+    }
+    @objc private func HospitalButton() {
+        print("Nearby Doctors button tapped")
+        let doctorVC = NearbyHospitalsViewController() // Replace with your actual ViewController
+        navigationController?.pushViewController(doctorVC, animated: true)
     }
 }
 
 
+#Preview {
+    MapSearchViewController()
+}

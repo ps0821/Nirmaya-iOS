@@ -25,6 +25,7 @@ class LoginViewController: UIViewController {
         button.setImage(UIImage(systemName: "arrow.left"), for: .normal)
         button.tintColor = UIColor(hex: "#525C4D") // Arrow color
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(navigateToLogin), for: .touchUpInside)
         return button
     }()
     
@@ -57,7 +58,7 @@ class LoginViewController: UIViewController {
     // Username Field
     private let usernameField: UITextField = {
         let textField = UITextField()
-        textField.text = "sample1_00"
+        textField.text = ""
         textField.font = UIFont.systemFont(ofSize: 16)
         textField.layer.borderColor = UIColor.lightGray.cgColor
         textField.layer.borderWidth = 1
@@ -87,7 +88,7 @@ class LoginViewController: UIViewController {
     // Password Field
     private let passwordField: UITextField = {
         let textField = UITextField()
-        textField.text = "sample1_00"
+        textField.text = ""
         textField.isSecureTextEntry = true
         textField.font = UIFont.systemFont(ofSize: 16)
         textField.layer.borderColor = UIColor.lightGray.cgColor
@@ -148,7 +149,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.systemBackground
-        
+        navigationItem.hidesBackButton = true
         // Add Subviews
         view.addSubview(backgroundImageView)
         view.addSubview(backButton)
@@ -160,6 +161,7 @@ class LoginViewController: UIViewController {
         view.addSubview(forgotPasswordButton)
         view.addSubview(loginButton)
         view.addSubview(signUpLabel)
+        loginButton.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
         
         setupConstraints()
         
@@ -169,7 +171,7 @@ class LoginViewController: UIViewController {
         signUpLabel.addGestureRecognizer(signUpTapGesture)
         
         // Add target for login button
-        loginButton.addTarget(self, action: #selector(navigateToLocationPrompt), for: .touchUpInside)
+//        loginButton.addTarget(self, action: #selector(navigateToLocationPrompt), for: .touchUpInside)
     }
     
     @objc private func navigateToSignup() {
@@ -179,13 +181,20 @@ class LoginViewController: UIViewController {
     
     @objc private func navigateToLocationPrompt() {
         
-        let locationPromptVC = UINavigationController(rootViewController: LocationPromptViewController())
+//        let locationPromptVC = UINavigationController(rootViewController: TabBarController())
         
-        if let window = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-           let keyWindow = window.windows.first {
-            keyWindow.rootViewController = locationPromptVC
-            keyWindow.makeKeyAndVisible()
-        }
+//        if let window = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+//           let keyWindow = window.windows.first {
+//            keyWindow.rootViewController = locationPromptVC
+//            keyWindow.makeKeyAndVisible()
+//        }
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+                      let window = windowScene.windows.first else { return }
+                window.rootViewController = TabBarController()
+                window.makeKeyAndVisible()
+    }
+    @objc private func navigateToLogin() {
+        navigationController?.popViewController(animated: true)
     }
 
     
@@ -246,6 +255,35 @@ class LoginViewController: UIViewController {
             signUpLabel.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20)
         ])
     }
+    @objc private func handleLogin() {
+        guard let email = usernameField.text, !email.isEmpty,
+              let password = passwordField.text, !password.isEmpty else {
+            showAlert(message: "Please fill in both fields.")
+            return
+        }
+        
+        loginUser(email: email, password: password) { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let response):
+                    print("Login Successful")
+                    print("Token: \(response.token)")
+                    print("User: \(response.user)")
+                    self.navigateToLocationPrompt() // Redirect after successful login
+                case .failure(let error):
+                    print("Login Failed: \(error.localizedDescription)")
+                    self.showAlert(message: "Login failed. Please try again.")
+                }
+            }
+        }
+    }
+
+    private func showAlert(message: String) {
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+
 }
 
 extension UITextField {
@@ -276,8 +314,4 @@ extension UIColor {
         let b = CGFloat(color & 0x0000FF) / 255.0
         self.init(red: r, green: g, blue: b, alpha: 1.0)
     }
-}
-
-#Preview{
-    LoginViewController()
 }
